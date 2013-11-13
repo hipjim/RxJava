@@ -49,7 +49,7 @@ public final class SynchronizedObserver<T> implements Observer<T> {
     private final SafeObservableSubscription subscription;
     private volatile boolean finishRequested = false;
     private volatile boolean finished = false;
-    private volatile Object lock;
+    private final Object lock;
 
     public SynchronizedObserver(Observer<? super T> Observer, SafeObservableSubscription subscription) {
         this.observer = Observer;
